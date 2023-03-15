@@ -5,17 +5,271 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piremit Email</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    /> -->
 
+    <style>
+      @font-face {
+        font-family: "Poppins";
+        src: url("font/Poppins-Regular.ttf");
+      }
+
+      @font-face {
+        font-family: "Grotta-Trial";
+        src: url("font/Grotta-Trial-Semibold.woff");
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins" !important;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .h-100 {
+        height: 100% !important;
+      }
+
+      .m-0 {
+        margin: 0 !important;
+      }
+
+      .m-3 {
+        margin: 1rem !important;
+      }
+
+      .mx-0 {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+
+      .my-2 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      .my-4 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .my-5 {
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+      }
+
+      .mt-3 {
+        margin-top: 1rem !important;
+      }
+      .mt-4 {
+        margin-top: 1.5rem !important;
+      }
+      .mt-5 {
+        margin-top: 3rem !important;
+      }
+
+      .p-0 {
+        padding: 0 !important;
+      }
+      .p-1 {
+        padding: 0.25rem !important;
+      }
+
+      .p-4 {
+        padding: 1.5rem !important;
+      }
+      .p-5 {
+        padding: 3rem !important;
+      }
+      .py-0 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+      .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+
+      /* colors  */
+
+      .bg-white {
+        background: white;
+      }
+
+      /* fontsizes */
+      .fs-1 {
+        font-size: calc(1.375rem + 1.5vw) !important;
+      }
+
+      .fs-4 {
+        font-size: calc(1.275rem + 0.3vw) !important;
+      }
+
+      p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .grotta-font {
+        font-family: "Grotta-Trial" !important;
+      }
+      .bg-light-grey {
+        background: #e5e5e5;
+      }
+      .bg-lighter-grey {
+        background-color: #ededed;
+      }
+      .text-muted {
+    --bs-text-opacity: 1;
+    color: #212529bf!important;
+}
+      .text-red {
+        color: #eb5757 !important;
+      }
+      .fs-24 {
+        font-size: 24px !important;
+      }
+
+      /* font-wweight */
+
+      .fw-bold {
+        font-weight: 700 !important;
+      }
+
+
+      img, svg {
+    vertical-align: middle;
+}
+      .text-center {
+        text-align: center !important;
+      }
+      .text-decoration-none {
+        text-decoration: none !important;
+      }
+      .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-0.5 * var(--bs-gutter-x));
+        margin-left: calc(-0.5 * var(--bs-gutter-x));
+      }
+
+      .row > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-top: var(--bs-gutter-y);
+      }
+      .align-items-center {
+        align-items: center !important;
+      }
+      .justify-content-center {
+        justify-content: center !important;
+      }
+
+      .col {
+        flex: 1 0 0;
+      }
+
+      .small,
+      small {
+        font-size: 0.875em;
+      }
+
+      .row-cols-1 > * {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      .container-fluid {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      @media (min-width: 576px) {
+        .col-sm-10 {
+          flex: 0 0 auto;
+          width: 83.33333333%;
+        }
+      }
+      @media (min-width: 768px) {
+        .row-cols-md-2 > * {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+
+        .col-md-9 {
+          flex: 0 0 auto;
+          width: 75%;
+        }
+
+        
+        .py-md-5 {
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+        }
+        .px-md-5 {
+          padding-left: 3rem !important;
+          padding-right: 3rem !important;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .row-cols-xl-3 > * {
+          flex: 0 0 auto;
+          width: 33.3333333333%;
+        }
+
+        .col-xl-7 {
+          flex: 0 0 auto;
+          width: 58.33333333%;
+        }
+
+        .p-xl-5 {
+          padding: 3rem !important;
+        }
+      }
+    </style>
   </head>
+
   <body class="bg-light-grey">
     <div
       class="h-100 container-fluid p-0 mx-0 my-2 my-md-5 row align-items-center justify-content-center"
     >
-      <div class="col col-sm-10 col-md-9 col-xl-7 my-5 m-xl-5 p-xl-5">
+      <div class="col col-sm-10 col-md-9 col-xl-7 my-5 m-xl-5 px-md-5 p-xl-5">
         <!-- top part -->
-        <div class="col bg-white p-4 py-5 py-md-5 px-md-5" style="border-top-left-radius: 8px;border-top-right-radius: 8px;">
+        <div
+          class="col bg-white p-4 py-5 py-md-5 px-md-5"
+          style="border-top-left-radius: 8px; border-top-right-radius: 8px"
+        >
           <img
             src="img/piremit.svg"
             alt="piremit  logo"
@@ -39,7 +293,13 @@
         </div>
 
         <!-- bottom part -->
-        <div class="col bg-lighter-grey p-5 text-center" style="border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;">
+        <div
+          class="col bg-lighter-grey p-5 text-center"
+          style="
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+          "
+        >
           <img src="img/piremit-light.svg" alt="" />
 
           <p class="text-dark fw-bold mt-3">
@@ -50,7 +310,9 @@
             via web or mobile apps, whichever one is convenient for you!
           </small>
 
-                  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center align-items-center my-4">
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center align-items-center my-4"
+          >
             <div class="col mt-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +365,7 @@
             </div>
           </div>
 
-          <div class="row row-cols-1 ">
+          <div class="row row-cols-1">
             <div class="col">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -181,13 +443,24 @@
             </div>
           </div>
 
-
-          <p class=" mt-4  small text-muted">This is an automated message, please do not reply</p>
+          <p class="mt-4 small text-muted">
+            This is an automated message, please do not reply
+          </p>
         </div>
       </div>
     </div>
 
-    <a class="btn btn-secondary m-3" href="success.html">Success page</a>
+    <a
+      class="btn btn-secondary m-3"
+      style="
+        padding: 0.375rem 0.75rem;
 
+        color: #fff;
+        background: #6c757d;
+        border-color: #6c757d;
+      "
+      href="success.html"
+      >Success page</a
+    >
   </body>
 </html>
